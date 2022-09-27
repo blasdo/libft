@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   evaluation_methods1.c                              :+:      :+:    :+:   */
+/*   casting_methods.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 16:56:10 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/09/27 17:01:09 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/09/27 18:36:13 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/09/27 19:26:18 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_atoi(const char *str)
 {
-	int	i;
+	int			res;
+	char		sign;
 
-	i = 0;
-	while ((s1[i] != 0 && s1[0] != 0) && i < n)
+	sign = 0;
+	res = 0;
+	if (*str == '-')
+		sign = *(str++) - 054;
+	while (*str != 0)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		if (*str >= '0' && *str <= '9')
+		{
+			if (sign == 0 && ((res * 10 + (*str - '0')) <= INT_MAX))
+				res = res * 10 + (*str - '0');
+			else if ((res * 10 - (*str - '0')) >= INT_MIN)
+				res = res * 10 - (*str - '0');
+			str++;
+		}
+		else
+			break ;
 	}
-	return (0);
-}
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	return (ft_strncmp((const char *) s1, (const char *) s2, n));
-}
-
-unsigned int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != 0)
-		i++;
-	return (i);
+	return (res);
 }
