@@ -9,10 +9,10 @@
 /*   Updated: 2022/09/27 16:23:29 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-#include <stdio.h>
+
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-
+	return (dst);
 }

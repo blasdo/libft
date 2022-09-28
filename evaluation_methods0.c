@@ -30,7 +30,7 @@ int	ft_isdigit(int c)
 {
 	if (!((c >= 0 && c <= 255) || c == EOF))
 		return (0);
-	if (c > '0' && c < '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
@@ -46,7 +46,7 @@ int	ft_isalnum(int c)
 
 int	ft_isascii(int c)
 {
-	if (c > 0 && c < 0177)
+	if (c >= 0 && c <= 0177)
 		return (1);
 	return (0);
 }
