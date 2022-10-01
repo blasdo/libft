@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-static int clean_str(const char **str)
+static int	clean_str(const char **str)
 {
-	int sign;
+	int	sign;
 
 	sign = 0;
 	while (**str != 0)
 	{
 		if (**str >= '0' && **str <= '9')
-			break;
+			break ;
 		else if (**str != ' ' && **str != '\t' && **str != '\n')
 		{
 			if (**str != '\v' && **str != '\f' && **str != '\r')
-				break;
+				break ;
 		}
 		*str = *str + 1;
 	}
@@ -36,7 +36,7 @@ static int clean_str(const char **str)
 	else
 		if (**str == '+')
 			*str = *str + 1;
-		return (0);
+	return (0);
 }
 
 int	ft_atoi(const char *str)

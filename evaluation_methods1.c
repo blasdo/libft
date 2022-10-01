@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:56:10 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/09/27 17:01:09 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/09/30 23:13:04 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;
+
 	i = 0;
-	while (i < n)
+	while ((s1[i] != 0 || s2[i] != 0) && i < n)
 	{
 		if (s1[i] != s2[i])
 		{
@@ -29,7 +30,22 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	return (ft_strncmp((const char *) s1, (const char *) s2, n));
+	int		i;
+	char	*c_s1;
+	char	*c_s2;
+
+	c_s1 = (char *) s1;
+	c_s2 = (char *) s2;
+	i = 0;
+	while (i < n)
+	{
+		if (c_s1[i] != c_s2[i])
+		{
+			return ((unsigned char) c_s1[i] - (unsigned char) c_s2[i]);
+		}
+		i++;
+	}
+	return (0);
 }
 
 unsigned int	ft_strlen(const char *s)
