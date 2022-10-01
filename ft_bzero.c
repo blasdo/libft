@@ -14,7 +14,7 @@
 
 void	*ft_bzero(void *b, size_t len)
 {
-	int		i;
+	size_t	i;
 	char	*bchar;
 
 	bchar = (char *) b;

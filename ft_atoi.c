@@ -14,9 +14,6 @@
 
 static int	clean_str(const char **str)
 {
-	int	sign;
-
-	sign = 0;
 	while (**str != 0)
 	{
 		if (**str >= '0' && **str <= '9')
