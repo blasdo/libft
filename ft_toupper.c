@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory_and_strings_copy_methods.c                  :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 17:48:31 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/09/30 22:56:57 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/10/01 13:35:14 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/10/01 13:35:16 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_toupper(int c)
 {
-	int		i;
-	char	*c_dst;
-	char	*c_src;
-
-	c_dst = (char *) dst;
-	c_src = (char *) src;
-	i = 0;
-	while (i < n)
-	{
-		c_dst[i] = c_src[i];
-		i++;
-	}
-	return (dst);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

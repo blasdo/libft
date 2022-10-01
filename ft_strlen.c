@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inicialization_methods.c                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 15:21:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/09/20 20:03:41 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/10/01 13:46:58 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/10/01 13:46:59 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+unsigned int	ft_strlen(const char *s)
 {
-	int		i;
-	char	*bchar;
+	int	i;
 
-	bchar = (char *) b;
 	i = 0;
-	while (i < len)
-		bchar[i++] = (unsigned char) c;
-	return (b);
-}
-
-void	*ft_bzero(void *b, size_t len)
-{
-	int		i;
-	char	*bchar;
-
-	bchar = (char *) b;
-	i = 0;
-	while (i < len)
-		bchar[i++] = '\0';
-	return (b);
+	while (s[i] != 0)
+		i++;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/09/27 19:05:48 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/01 12:37:53 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int				ft_atoi(const char *str);
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_bzero(void *b, size_t len);
 // Memory manipulation Methods
-void			*ft_memcpy(void *dst, const void *src, size_t len);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
+void			*ft_memmove(void *dst, const void *src, size_t len);
 #	endif
