@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:00:10 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/01 17:05:11 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:24:22 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	c_dst = (char *) dst;
 	c_src = (char *) src;
 	i = 0;
-	while (i < n)
+	while (i < n && (src != 0 || dst != 0))
 	{
 		c_dst[i] = c_src[i];
 		i++;

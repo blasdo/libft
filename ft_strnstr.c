@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 20:17:06 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/04 14:16:31 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:25:48 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		if ((haystack[i] == needle[j]) && (needle[j] != 0))
 		{
-			if (needle[j + 1] == 0)
+			if (needle[j + 1] == 0 || ((j + 1) == len))
 				return ((char *)(haystack + (i - j)));
 			j++;
 		}
