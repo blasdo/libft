@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/01 19:08:28 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/04 17:03:12 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stddef.h>
 # include <stdio.h>
+# include <stdlib.h>
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
 # endif
@@ -42,4 +43,5 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void			*ft_calloc(size_t count, size_t size);
 #	endif
