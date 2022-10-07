@@ -6,13 +6,12 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/07 12:46:45 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/07 17:42:38 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
 # include <stdlib.h>
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
@@ -22,6 +21,11 @@
 # endif
 # ifndef EOF
 #  define EOF -1
+# endif
+# ifndef UC
+#  define UC
+
+typedef unsigned char	t_uc;
 # endif
 
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -46,4 +50,5 @@ char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void		*ft_calloc(size_t count, size_t size);
-#	endif
+void		*ft_memchr(const void *s, int c, size_t n);
+#endif
