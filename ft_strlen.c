@@ -6,13 +6,13 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 13:46:58 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/01 13:46:59 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:37:21 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:01:37 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/04 17:01:38 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:41:08 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	return (ft_bzero(malloc(count * size), (count * size)));
+	void	*to_return;
+
+	to_return = malloc(count * size);
+	if (to_return != 0)
+		return (ft_bzero(to_return, (count * size)));
+	else
+		return (0);
 }
