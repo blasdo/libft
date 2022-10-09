@@ -52,4 +52,5 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void		*ft_calloc(size_t count, size_t size);
 void		*ft_memchr(const void *s, int c, size_t n);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
+char		*ft_strdup(const char *s1);
 #endif
