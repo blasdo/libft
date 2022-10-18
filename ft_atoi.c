@@ -3,58 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
+/*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 13:31:18 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/01 13:31:20 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/10/18 18:46:20 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/10/18 18:48:27 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	clean_str(const char **str)
+int	ft_atoi(const char *nptr)
 {
-	while (**str != 0)
-	{
-		if (**str >= '0' && **str <= '9')
-			break ;
-		else if (**str != ' ' && **str != '\t' && **str != '\n')
-		{
-			if (**str != '\v' && **str != '\f' && **str != '\r')
-				break ;
-		}
-		*str = *str + 1;
-	}
-	if (**str == '-')
-	{
-		*str = *str + 1;
-		return (1);
-	}
-	else
-		if (**str == '+')
-			*str = *str + 1;
-	return (0);
-}
+	int	sign;
+	int	res;
 
-int	ft_atoi(const char *str)
-{
-	int			res;
-	char		sign;
-
-	sign = clean_str(&str);
+	sign = 0;
 	res = 0;
-	while (*str != 0)
+	while (*nptr == ' ' || *nptr == '\n' || *nptr == '\t' || *nptr == '\v'
+		|| *nptr == '\f' || *nptr == '\r')
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		if (*str >= '0' && *str <= '9')
-		{
-			if (sign == 0 && ((res * 10 + (*str - '0')) <= INT_MAX))
-				res = res * 10 + (*str - '0');
-			else if ((res * 10 - (*str - '0')) >= INT_MIN)
-				res = res * 10 - (*str - '0');
-			str++;
-		}
+		if (*nptr == '-')
+			sign = 1;
+		nptr++;
+	}
+	while (ft_isdigit(*nptr))
+	{
+		if (sign == 0)
+			res = (res * 10) + (*(nptr++) - '0');
 		else
-			break ;
+			res = (res * 10) - (*(nptr++) - '0');
 	}
 	return (res);
 }
