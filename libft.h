@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/21 19:34:51 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:16:35 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@
 # ifndef EOF
 #  define EOF -1
 # endif
-# ifndef UC
-#  define UC
 
-typedef unsigned char	t_uc;
-# endif
-
+//List
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}		t_list;
+//List Methods
+//No-Bonus Methods
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

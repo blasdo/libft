@@ -6,9 +6,11 @@ CC		= gcc -Wall -Wextra -Werror
 all:		${NAME}
 ${NAME}:	${OBJS}
 	ar rc ${NAME} ${OBJS}
-	ranlib ${NAME}
 clean:
 	rm -f ${OBJS}
 fclean:		clean
 	rm -f ${NAME}
 re:			fclean all
+bonus:
+	#define ALLOW_LISTS
+	make all

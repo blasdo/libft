@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:09:05 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/21 11:29:22 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/22 14:59:58 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*rtn;
+
 	if (start > ft_strlen(s))
 	{
 		rtn = malloc(1);
