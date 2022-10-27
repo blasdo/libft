@@ -11,6 +11,3 @@ clean:
 fclean:		clean
 	rm -f ${NAME}
 re:			fclean all
-bonus:
-	#define ALLOW_LISTS
-	make all
