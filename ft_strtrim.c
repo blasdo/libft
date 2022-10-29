@@ -1,47 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/29 18:08:42 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/10/29 18:09:05 by bvelasco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
-size_t	get_new_len(char const *s1, char const *set)
-{
-	int i;
-	int j;
-	int to_delete;
-	char *lst_to_delete;
 
-	to_delete = 0;
-	i = 0;
-	j = 0;
-	while (s1[i] != 0 && set[j] != 0)
-	{
-		j = 0;
-		while (set[j] != 0 && s1[i] != set[j])
-			j++;
-		to_delete++;
-		lst_to_delete = (char *) s1 + i;
-	}
-	i = ft_strlen(s1) - 1;
-	while (i >= 0 && set[j] != 0 && lst_to_delete)
-	{
-		j = 0;
-		while (set[j] != 0 && s1[i] != set[j])
-			j++;
-		to_delete++;
-	}
-	return (to_delete);
-}
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int is_init;
+	unsigned int	i;
+	char			fst_char_index;
+	unsigned int	ultimate_char_index;
 
 	i = 0;
-	is_init = 0;
-
-	printf("%li", get_new_len(s1, set));
-	return ("mayonesa");
-}
-
-int main(int argc, char *argv[])
-{
-	ft_strtrim(argv[1],argv[2]);
-	return (0);
+	fst_char_index = 0;
+	ultimate_char_index = ft_strlen(s1);
+	while (s1[i] != 0 && ft_strchr(set, s1[i]))
+		i++;
+	fst_char_index = i;
+	while (ultimate_char_index > i && ft_strchr(set, s1[ultimate_char_index]))
+		ultimate_char_index--;
+	return (ft_substr(s1, fst_char_index, (ultimate_char_index - (i - 1))));
 }
