@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:50:40 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/29 17:23:07 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/10/29 18:08:42 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/10/29 18:09:05 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	char	c_c;
+	unsigned int	i;
+	char			fst_char_index;
+	unsigned int	ultimate_char_index;
 
-	c_c = (char) c;
 	i = 0;
-	if (c_c == 0)
-		return ((char *) s + ft_strlen(s));
-	while (s[i] != 0)
-	{
-		if (s[i] == c_c)
-		{
-			return ((char *) s + i);
-		}
+	fst_char_index = 0;
+	ultimate_char_index = ft_strlen(s1);
+	while (s1[i] != 0 && ft_strchr(set, s1[i]))
 		i++;
-	}
-	return (0);
+	fst_char_index = i;
+	while (ultimate_char_index > i && ft_strchr(set, s1[ultimate_char_index]))
+		ultimate_char_index--;
+	return (ft_substr(s1, fst_char_index, (ultimate_char_index - (i - 1))));
 }

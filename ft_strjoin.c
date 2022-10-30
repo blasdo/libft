@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 18:46:20 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/18 18:48:27 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/10/21 19:23:56 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/10/22 14:59:39 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	sign;
-	int	res;
+	char	*rtn;
 
-	sign = 0;
-	res = 0;
-	while (*nptr == ' ' || *nptr == '\n' || *nptr == '\t' || *nptr == '\v'
-		|| *nptr == '\f' || *nptr == '\r')
-		nptr++;
-	if (*nptr == '+' || *nptr == '-')
+	if ((ft_strlen(s1) + ft_strlen(s2)) != 0)
 	{
-		if (*nptr == '-')
-			sign = 1;
-		nptr++;
+		rtn = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+		if (rtn == 0)
+			return (0);
+		ft_strlcpy(rtn, s1, -1);
+		ft_strlcat(rtn, s2, -1);
 	}
-	while (ft_isdigit(*nptr))
+	else
 	{
-		if (sign == 0)
-			res = (res * 10) + (*(nptr++) - '0');
-		else
-			res = (res * 10) - (*(nptr++) - '0');
+		rtn = malloc(1);
+		if (rtn == 0)
+			return (0);
+		rtn[0] = 0;
 	}
-	return (res);
+	return (rtn);
 }
