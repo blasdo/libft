@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 19:23:56 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/22 14:59:39 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:33:21 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*rtn;
 
+	if (!s1 || !s2)
+		return (0);
 	if ((ft_strlen(s1) + ft_strlen(s2)) != 0)
 	{
 		rtn = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);

@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 18:08:42 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/29 18:09:05 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:34:36 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			fst_char_index;
 	unsigned int	ultimate_char_index;
 
+	if (!s1 || !set)
+		return (0);
 	i = 0;
 	fst_char_index = 0;
 	ultimate_char_index = ft_strlen(s1);
