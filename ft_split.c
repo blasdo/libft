@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:44:33 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/30 16:27:35 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:05:55 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,11 @@ char	**ft_split(char const *s, char c)
 	int		low;
 	char	**rtn;
 
+	if (!s)
+		return (0);
 	i = 0;
 	now = count_words(s, c);
-	rtn = malloc((now + 1) * sizeof(char *));
+	rtn = ft_calloc((now + 1), sizeof(char *));
 	if (rtn == 0)
 		return (0);
 	while (i < now)
@@ -76,13 +78,11 @@ char	**ft_split(char const *s, char c)
 			s++;
 		low = word_len(s, c);
 		rtn[i] = ft_substr(s, 0, low);
-		if (rtn[i] == 0)
+		if (rtn[i++] == 0)
 			return (clean_split(rtn));
 		while (*(s + low) == c)
 			low++;
 		s += low;
-		i++;
 	}
-	rtn[i] = 0;
 	return (rtn);
 }

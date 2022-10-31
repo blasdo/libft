@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 19:06:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/07 20:22:45 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/10/30 21:34:06 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/10/31 12:07:31 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	j;
-	size_t	dst_original_size;
+	unsigned int	i;
+	unsigned int	len;
+	char			*rtn;
 
-	if (dstsize == 0)
+	if (!s || !f)
 		return (0);
-	i = ft_strlen(dst);
-	dst_original_size = i;
-	j = 0;
-	if (dstsize == 0)
-		return (ft_strlen(src) + dstsize);
-	while (i < dstsize -1 && src[j] != 0)
-		dst[i++] = src[j++];
-	dst[i] = 0;
-	if (dstsize <= ft_strlen(dst))
+	i = 0;
+	len = ft_strlen(s);
+	rtn = malloc(len + 1);
+	if (!rtn)
+		return (0);
+	while (i < len)
 	{
-		return (ft_strlen(src) + dstsize);
+		rtn[i] = (*f)((unsigned int) i, s[i]);
+		i++;
 	}
-	return (dst_original_size + ft_strlen(src));
+	rtn[i] = 0;
+	return (rtn);
 }
