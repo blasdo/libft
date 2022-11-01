@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/11/01 15:02:10 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/11/01 16:10:33 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 #  define EOF -1
 # endif
 
-
 typedef struct s_list
 {
 	void			*content;
@@ -32,8 +31,8 @@ typedef struct s_list
 }				t_list;
 
 //list methods
-t_list *ft_lstnew(void *content);
-
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 //No-Bonus Methods
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_isalpha(int c);
