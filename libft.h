@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/11/01 13:18:49 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:02:10 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 #  define EOF -1
 # endif
 
-# ifdef BONUS
 
 typedef struct s_list
 {
@@ -32,7 +31,9 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-# endif
+//list methods
+t_list *ft_lstnew(void *content);
+
 //No-Bonus Methods
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_isalpha(int c);
