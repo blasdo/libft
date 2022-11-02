@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
+/*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 13:44:02 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/11/01 22:35:30 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/11/01 16:08:22 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/11/01 17:19:43 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!((c >= 0 && c <= 255) || c == EOF))
-		return (0);
-	if (c >= 040 && c <= 0176)
-		return (1);
-	return (0);
+	if (!lst || !new)
+		return ;
+	new -> next = *lst;
+	*lst = new;
 }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
+/*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 13:44:02 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/11/01 22:35:30 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/11/02 01:10:59 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/11/02 03:11:26 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!((c >= 0 && c <= 255) || c == EOF))
-		return (0);
-	if (c >= 040 && c <= 0176)
-		return (1);
-	return (0);
+	void	*next_node;
+
+	if (!lst || !del || !(*lst))
+		return ;
+	while ((*lst))
+	{
+		next_node = (*lst)-> next;
+		ft_lstdelone(*lst, del);
+		*lst = next_node;
+	}
 }
