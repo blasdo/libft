@@ -9,12 +9,12 @@ FLAGS		= -Wall -Wextra -Werror
 B_FLAGS		= -D
 B_DEFINES	= LIST
 all:		${NAME}
+${NAME}:	${SRCS} ${OBJS}
+	ar rc ${NAME} ${OBJS}
 $(OBJS): %.o: %.c
 	${CC} ${FLAGS} -c $< -o $@
 $(B_OBJS): %.o: %.c
 	${CC} ${FLAGS} ${B_FLAGS} ${B_DEFINES} -c $< -o $@
-${NAME}:	${SRCS} ${OBJS}
-	ar rc ${NAME} ${OBJS}
 clean:
 	rm -f ${OBJS} ${B_OBJS}
 fclean:		clean 
