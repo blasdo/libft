@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:38:57 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/11/03 14:37:02 by bvelasco         ###   ########.fr       */
+/*   Updated: 2022/11/03 16:50:32 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
+	char *o_src;
 
-	i = 0;
-	while (i < (dstsize - 1) && src[i] != 0)
+	o_src = (char *)src;
+	while (dstsize > 1 && *src)
 	{
-		dst[i] = src[i];
-		i++;
+		*(dst++) = *(src++);
+		dstsize--;
 	}
-	dst[i] = 0;
-	return ((size_t) ft_strlen(src));
+	if(dstsize > 0)
+		*dst = 0;
+	return ((size_t) ft_strlen(o_src));
 }
