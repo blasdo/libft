@@ -6,15 +6,12 @@ B_OBJS 		= ${B_SRCS:.c=.o}
 NAME		= libft.a
 CC			= gcc 
 FLAGS		= -Wall -Wextra -Werror
-B_FLAGS		= -D
-B_DEFINES	= LIST
-all:		${NAME}
-${NAME}:	${SRCS} ${OBJS}
-	ar rc ${NAME} ${OBJS}
-$(OBJS): %.o: %.c
+
+%.o:		%.c
 	${CC} ${FLAGS} -c $< -o $@
-$(B_OBJS): %.o: %.c
-	${CC} ${FLAGS} ${B_FLAGS} ${B_DEFINES} -c $< -o $@
+all:		${NAME}
+${NAME}:	${OBJS}
+	ar rc ${NAME} ${OBJS}
 clean:
 	rm -f ${OBJS} ${B_OBJS}
 fclean:		clean 
@@ -22,11 +19,5 @@ fclean:		clean
 re:			fclean all
 bonus:		all ${B_OBJS}
 	ar rc ${NAME} ${B_OBJS}
-all_clean: all clean
-re_clean: re clean
-	@make clean;
-re_bonus: re bonus
-reb_clean: fclean bonus_clean
-bonus_clean: all bonus clean
 
-.PHONY: all clean fclean all_clean bonus_clean
+.PHONY: all clean fclean re bonus 
