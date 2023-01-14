@@ -6,13 +6,13 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 16:47:41 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/01/14 20:13:56 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/01/14 22:32:41 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_numlen_base(long lnbr, size_t base_len)
+size_t	ft_numlen_base(long lnbr, size_t base_len)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ char	*ft_ltoa_base(long lnbr, char *base)
 
 	base_len = ft_strlen(base);
 	index = ft_numlen_base(lnbr, base_len);
-	ret = malloc(index + 1); 
+	ret = malloc(index + 1);
 	if (!ret)
 		return (0);
 	if (lnbr < 0)
@@ -48,9 +48,9 @@ char	*ft_ltoa_base(long lnbr, char *base)
 	while (lnbr)
 	{
 		if (lnbr > 0)
-			ret[index--] = base[lnbr%base_len];
+			ret[index--] = base[lnbr % base_len];
 		if (lnbr < 0)
-			ret[index--] = base[lnbr%base_len];
+			ret[index--] = base[lnbr % base_len];
 		lnbr /= base_len;
 	}
 	return (ret);
