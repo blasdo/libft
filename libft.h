@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/01/15 02:42:42 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:49:38 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_isprint(int c);
 // Casting Functions
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
-char	*ft_ltoa_base(long lnbr, char *base);
+char	*ft_ltoa_base(long long lnbr, char *base);
 // Cleaning Strings and Memory Functions
 char	*ft_strtrim(char const *s1, char const *set);
 // Char transformation Functions
