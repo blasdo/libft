@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_numlen_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
+/*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 13:46:58 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/07 12:37:21 by bvelasco         ###   ########.fr       */
+/*   Created: 2023/01/15 02:20:54 by bvelasco          #+#    #+#             */
+/*   Updated: 2023/01/15 02:29:53 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_numlen_base(long lnbr, size_t base_len)
 {
 	int	i;
 
 	i = 0;
-	while (s[i] != 0)
+	if (lnbr < 0)
+		i = 1;
+	if (lnbr == 0)
+		return (1);
+	while (lnbr)
+	{
+		lnbr /= base_len;
 		i++;
+	}
 	return (i);
 }

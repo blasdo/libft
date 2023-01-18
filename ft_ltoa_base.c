@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_ltoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 19:06:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/07 20:22:45 by bvelasco         ###   ########.fr       */
+/*   Created: 2023/01/14 16:47:41 by bvelasco          #+#    #+#             */
+/*   Updated: 2023/01/16 19:39:46 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_ltoa_base(long long lnbr, char *base)
 {
-	size_t	i;
-	size_t	j;
-	size_t	dst_original_size;
+	int		base_len;
+	char	*ret;
+	int		index;
 
-	if (!dstsize && !dst)
+	base_len = ft_strlen(base);
+	index = ft_numlen_base(lnbr, base_len);
+	ret = malloc(index + 1);
+	if (!ret)
 		return (0);
-	i = ft_strlen(dst);
-	dst_original_size = i;
-	j = 0;
-	if (dstsize == 0)
-		return (ft_strlen(src) + dstsize);
-	while (i < dstsize -1 && src[j] != 0)
-		dst[i++] = src[j++];
-	dst[i] = 0;
-	if (dstsize <= ft_strlen(dst))
+	if (lnbr < 0)
+		ret[0] = '-';
+	if (lnbr == 0)
+		ret[0] = '0';
+	ret[index--] = 0;
+	while (lnbr)
 	{
-		return (ft_strlen(src) + dstsize);
+		if (lnbr > 0)
+			ret[index--] = base[lnbr % base_len];
+		if (lnbr < 0)
+			ret[index--] = base[lnbr % base_len];
+		lnbr /= base_len;
 	}
-	return (dst_original_size + ft_strlen(src));
+	return (ret);
 }
