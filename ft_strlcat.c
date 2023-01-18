@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 21:10:36 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/11/04 21:11:43 by bvelasco         ###   ########.fr       */
+/*   Created: 2022/10/07 19:06:00 by bvelasco          #+#    #+#             */
+/*   Updated: 2022/10/07 20:22:45 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char		*f_dst;
-	const char	*f_src;
+	size_t	i;
+	size_t	j;
+	size_t	dst_original_size;
 
-	f_dst = dst;
-	f_src = (char *) src;
-	while (dstsize && *f_dst)
+	if (!dstsize && !dst)
+		return (0);
+	i = ft_strlen(dst);
+	dst_original_size = i;
+	j = 0;
+	if (dstsize == 0)
+		return (ft_strlen(src) + dstsize);
+	while (i < dstsize -1 && src[j] != 0)
+		dst[i++] = src[j++];
+	dst[i] = 0;
+	if (dstsize <= ft_strlen(dst))
 	{
-		f_dst++;
-		dstsize--;
+		return (ft_strlen(src) + dstsize);
 	}
-	while (dstsize > 1 && *f_src)
-	{
-		*(f_dst++) = *(f_src++);
-		dstsize--;
-	}
-	if (dstsize)
-		*(f_dst) = 0;
-	return ((size_t)(ft_strlen(src) - (f_src - src) + (f_dst - dst)));
+	return (dst_original_size + ft_strlen(src));
 }
