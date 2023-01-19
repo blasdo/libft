@@ -6,15 +6,19 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 23:57:49 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/10/31 00:04:08 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:32:20 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
+	int	strlen;
+
+	strlen = ft_strlen(s);
 	if (s == 0)
-		return ;
-	write(fd, s, ft_strlen(s));
+		return (0);
+	write(fd, s, strlen);
+	return (strlen);
 }
