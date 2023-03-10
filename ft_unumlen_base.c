@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
+/*   ft_unumlen_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/15 01:46:34 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/01/15 02:45:35 by bvelasco         ###   ########.fr       */
+/*   Created: 2023/02/27 17:26:32 by bvelasco          #+#    #+#             */
+/*   Updated: 2023/03/09 17:10:58 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_putlnbr_base_fd(long nbr, char *base, int fd)
-{
-	char	*toprint;
-	int		printed;
+#include "libft.h"
 
-	toprint = ft_ltoi_base(nbr, base);
-	printed = ft_strlen(toprint);
-	write(fd, toprint, printed);
-	free(toprint);
-	return (printed);
+size_t	ft_unumlen_base(unsigned long lnbr, unsigned long base_len)
+{
+	size_t	i;
+
+	i = 0;
+	if (lnbr == 0)
+		return (1);
+	while (lnbr)
+	{
+		lnbr /= base_len;
+		i++;
+	}
+	return (i);
 }

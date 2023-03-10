@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/01/19 15:34:11 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:53:49 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# ifndef INT_MAX
-#  define INT_MAX 2147483647
-# endif
-# ifndef INT_MIN
-#  define INT_MIN -2147483648
-# endif
+# include <limits.h>
 # ifndef EOF
 #  define EOF -1
 # endif
 
+// Most frecuently Bases
+# define LOW_HEX "0123456789abcdef"
+# define UPP_HEX "0123456789ABCDEF"
 // List Struct
 typedef struct s_list
 {
@@ -41,6 +39,7 @@ int		ft_isprint(int c);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 char	*ft_ltoa_base(long long lnbr, char *base);
+char	*ft_ultoa_base(unsigned long lnbr, char *base);
 // Cleaning Strings and Memory Functions
 char	*ft_strtrim(char const *s1, char const *set);
 // Char transformation Functions
@@ -60,7 +59,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 // Info Functions
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-size_t	ft_numlen_base(long lnbr, size_t base_len);
+size_t	ft_numlen_base(long long lnbr, long long base_len);
+size_t	ft_unumlen_base(unsigned long lnbr, unsigned long base_len);
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 // Inicialization Functions
@@ -79,10 +79,12 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 // Put_x_fd Functions
 void	ft_putchar_fd(char c, int fd);
+int		ft_putptr_fd(void *ptr, int fd);
 int		ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-int		ft_putlnbr_base_fd(int nbr, char *base, int fd);
+int		ft_putlnbr_base_fd(long long nbr, char *base, int fd);
+int		ft_putulnbr_base_fd(unsigned long nbr, char *base, int fd);
 // Search Char or String in Memory or Null terminated Strings Functions
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);

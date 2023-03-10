@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen_base.c                                   :+:      :+:    :+:   */
+/*   ft_putptr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: bvelasco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/15 02:20:54 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/01/15 02:29:53 by bvelasco         ###   ########.fr       */
+/*   Created: 2023/03/10 14:20:02 by bvelasco          #+#    #+#             */
+/*   Updated: 2023/03/10 14:52:34 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numlen_base(long long lnbr, long long base_len)
+int	ft_putptr_fd(void *ptr, int fd)
 {
-	int	i;
+	int				rtn;
+	unsigned long	lng;
 
-	i = 0;
-	if (lnbr < 0)
-		i = 1;
-	if (lnbr == 0)
-		return (1);
-	while (lnbr)
-	{
-		lnbr /= base_len;
-		i++;
-	}
-	return (i);
+	rtn = 0;
+	lng = (unsigned long) ptr;
+	rtn += ft_putstr_fd("0x", fd);
+	rtn += ft_putulnbr_base_fd(lng, LOW_HEX, fd);
+	return (rtn);
 }

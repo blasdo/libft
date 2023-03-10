@@ -30,11 +30,16 @@ SRCS	= ft_atoi.c\
 		  ft_strmapi.c\
 		  ft_striteri.c\
 		  ft_putchar_fd.c\
+		  ft_putptr_fd.c\
 		  ft_putstr_fd.c\
 		  ft_putendl_fd.c\
 		  ft_putnbr_fd.c\
+		  ft_putulnbr_base_fd.c\
+		  ft_putlnbr_base_fd.c\
+		  ft_unumlen_base.c\
 		  ft_numlen_base.c\
 		  ft_ltoa_base.c\
+		  ft_ultoa_base.c\
 		  ft_lstnew_bonus.c\
 		  ft_lstadd_front_bonus.c\
 		  ft_lstsize_bonus.c\
