@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 01:46:34 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/03/06 16:16:27 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:51:20 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_putulnbr_base_fd(unsigned long nbr, char *base, int fd)
 	int		printed;
 
 	toprint = ft_ultoa_base(nbr, base);
+	if (!toprint)
+		return (0);
 	printed = ft_strlen(toprint);
 	write(fd, toprint, printed);
 	free(toprint);
