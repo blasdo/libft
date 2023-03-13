@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:46:20 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/03/13 10:30:39 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/03/13 10:42:26 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 0;
 	res = 0;
-	while (ft_isspace(*nptr))	
+	while (ft_isspace(*nptr))
 		nptr++;
 	if (*nptr == '+' || *nptr == '-')
 	{
