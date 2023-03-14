@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/03/10 14:53:49 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:22:33 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 // Most frecuently Bases
 # define LOW_HEX "0123456789abcdef"
 # define UPP_HEX "0123456789ABCDEF"
+# define DEX "0123456789"
 // List Struct
 typedef struct s_list
 {
@@ -35,6 +36,7 @@ int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+int		ft_isspace(int c);
 // Casting Functions
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
