@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:17:35 by bvelasco          #+#    #+#             */
-/*   Updated: 2022/11/02 04:12:45 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/09/23 14:52:13 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_list	*clear_content(void *content, void (*del)(void *))
 }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{	
+{
 	const t_list	*ret;
 	void			*tmp_content;
 	int				i;
