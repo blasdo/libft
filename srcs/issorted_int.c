@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   issorted_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: bvelasco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 10:11:08 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/10/01 16:38:00 by bvelasco         ###   ########.fr       */
+/*   Created: 2023/10/01 16:10:06 by bvelasco          #+#    #+#             */
+/*   Updated: 2023/10/01 16:50:26 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int	ft_isspace(int c)
+int	issorted_int(int *numbers, size_t len)
 {
-	unsigned char	c_c;
+	size_t	i;
+	int		prev;
 
-	c_c = (unsigned char) c;
-	if (c_c == ' ' || c_c == '\t' || c_c == '\n' || c_c == '\v' || \
-	c_c == '\f' || c_c == '\r')
-		return (1);
-	return (0);
+	i = 0;
+	if (!len || !numbers)
+		return (0);
+	prev = numbers[i++];
+	while (i < len)
+	{
+		if (prev > numbers[i])
+			return (0);
+		prev = numbers[i++];
+	}
+	return (1);
 }

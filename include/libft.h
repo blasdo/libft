@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/09/26 12:56:21 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/10/01 21:04:11 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,7 @@ char		*bufflist_to_str(t_bufflist *first);
 void		*freebuff(t_bufflist **bufflist);
 void		clearbuff(t_bufflist **bufflist);
 char		*findnl(t_bufflist *arr);
+//  sort functions
+int			issorted_int(int *numbers, size_t len);
+void		bubblesort_int(int *numbers, size_t len);
 #endif

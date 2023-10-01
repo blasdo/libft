@@ -4,6 +4,7 @@ SRCS		=	$(SRCS_DIR)/ft_atoi.c\
 				$(SRCS_DIR)/ft_bzero.c\
 				$(SRCS_DIR)/ft_isalnum.c\
 				$(SRCS_DIR)/ft_isascii.c\
+				$(SRCS_DIR)/ft_isspace.c\
 				$(SRCS_DIR)/ft_isprint.c\
 				$(SRCS_DIR)/ft_memcpy.c\
 				$(SRCS_DIR)/ft_strlen.c\
@@ -52,14 +53,16 @@ SRCS		=	$(SRCS_DIR)/ft_atoi.c\
 				$(SRCS_DIR)/ft_lstmap_bonus.c \
 				$(SRCS_DIR)/ft_printf.c \
 				$(SRCS_DIR)/get_next_line.c \
-				$(SRCS_DIR)/get_next_line_utils.c
+				$(SRCS_DIR)/get_next_line_utils.c \
+				$(SRCS_DIR)/issorted_int.c\
+				$(SRCS_DIR)/bubblesort_int.c
 
 OBJS_DIR	=	objs
 OBJS		=	$(patsubst $(SRCS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS))
 LIB_DIR		=	lib
 NAME		=	$(LIB_DIR)/libft.a
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror -Iinclude
+CFLAGS		=	-g3 -Wall -Wextra -Werror -Iinclude
 LDFLAGS		= 	-fuse-ld=lld
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
@@ -73,4 +76,3 @@ clean:
 fclean:		clean 
 	rm -f ${NAME}
 re:			fclean all
-	
