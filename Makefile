@@ -1,57 +1,72 @@
+SRCS_DIR	=	srcs
 
-SRCS	= ft_atoi.c\
-		  ft_bzero.c\
-		  ft_isalnum.c\
-		  ft_isascii.c\
-		  ft_isprint.c\
-		  ft_memcpy.c\
-		  ft_strlen.c\
-		  ft_tolower.c\
-		  ft_isalpha.c\
-		  ft_isdigit.c\
-		  ft_memcmp.c\
-		  ft_memset.c\
-		  ft_strncmp.c\
-		  ft_toupper.c\
-		  ft_memmove.c\
-		  ft_strlcpy.c\
-		  ft_strchr.c\
-		  ft_strrchr.c\
-		  ft_memchr.c\
-		  ft_strnstr.c\
-		  ft_calloc.c\
-		  ft_strlcat.c\
-		  ft_strdup.c\
-		  ft_substr.c\
-		  ft_strjoin.c\
-		  ft_strtrim.c\
-		  ft_split.c\
-		  ft_itoa.c\
-		  ft_strmapi.c\
-		  ft_striteri.c\
-		  ft_putchar_fd.c\
-		  ft_putptr_fd.c\
-		  ft_putstr_fd.c\
-		  ft_putendl_fd.c\
-		  ft_putnbr_fd.c\
-		  ft_putulnbr_base_fd.c\
-		  ft_putlnbr_base_fd.c\
-		  ft_unumlen_base.c\
-		  ft_numlen_base.c\
-		  ft_ltoa_base.c\
-		  ft_ultoa_base.c\
-		  ft_lstnew_bonus.c\
-		  ft_lstadd_front_bonus.c\
-		  ft_lstsize_bonus.c\
-		  ft_lstlast_bonus.c\
-		  ft_lstadd_back_bonus.c\
-		  ft_lstdelone_bonus.c\
-		  ft_lstclear_bonus.c\
-		  ft_lstiter_bonus.c\
-		  ft_lstmap_bonus.c
-OBJS	= ${SRCS:.c=.o}
-NAME	= libft.a
-CC		= gcc -Wall -Wextra -Werror
+SRCS		=	$(SRCS_DIR)/ft_atoi.c\
+				$(SRCS_DIR)/ft_bzero.c\
+				$(SRCS_DIR)/ft_isalnum.c\
+				$(SRCS_DIR)/ft_isascii.c\
+				$(SRCS_DIR)/ft_isspace.c\
+				$(SRCS_DIR)/ft_isprint.c\
+				$(SRCS_DIR)/ft_memcpy.c\
+				$(SRCS_DIR)/ft_strlen.c\
+				$(SRCS_DIR)/ft_tolower.c\
+				$(SRCS_DIR)/ft_isalpha.c\
+				$(SRCS_DIR)/ft_isdigit.c\
+				$(SRCS_DIR)/ft_memcmp.c\
+				$(SRCS_DIR)/ft_memset.c\
+				$(SRCS_DIR)/ft_strncmp.c\
+				$(SRCS_DIR)/ft_toupper.c\
+				$(SRCS_DIR)/ft_memmove.c\
+				$(SRCS_DIR)/ft_strlcpy.c\
+				$(SRCS_DIR)/ft_strchr.c\
+				$(SRCS_DIR)/ft_strrchr.c\
+				$(SRCS_DIR)/ft_memchr.c\
+				$(SRCS_DIR)/ft_strnstr.c\
+				$(SRCS_DIR)/ft_calloc.c\
+				$(SRCS_DIR)/ft_strlcat.c\
+				$(SRCS_DIR)/ft_strdup.c\
+				$(SRCS_DIR)/ft_substr.c\
+				$(SRCS_DIR)/ft_strjoin.c\
+				$(SRCS_DIR)/ft_strtrim.c\
+				$(SRCS_DIR)/ft_split.c\
+				$(SRCS_DIR)/ft_itoa.c\
+				$(SRCS_DIR)/ft_strmapi.c\
+				$(SRCS_DIR)/ft_striteri.c\
+				$(SRCS_DIR)/ft_putchar_fd.c\
+				$(SRCS_DIR)/ft_putptr_fd.c\
+				$(SRCS_DIR)/ft_putstr_fd.c\
+				$(SRCS_DIR)/ft_putendl_fd.c\
+				$(SRCS_DIR)/ft_putnbr_fd.c\
+				$(SRCS_DIR)/ft_putulnbr_base_fd.c\
+				$(SRCS_DIR)/ft_putlnbr_base_fd.c\
+				$(SRCS_DIR)/ft_unumlen_base.c\
+				$(SRCS_DIR)/ft_numlen_base.c\
+				$(SRCS_DIR)/ft_ltoa_base.c\
+				$(SRCS_DIR)/ft_ultoa_base.c\
+				$(SRCS_DIR)/ft_lstnew_bonus.c\
+				$(SRCS_DIR)/ft_lstadd_front_bonus.c\
+				$(SRCS_DIR)/ft_lstsize_bonus.c\
+				$(SRCS_DIR)/ft_lstlast_bonus.c\
+				$(SRCS_DIR)/ft_lstadd_back_bonus.c\
+				$(SRCS_DIR)/ft_lstdelone_bonus.c\
+				$(SRCS_DIR)/ft_lstclear_bonus.c\
+				$(SRCS_DIR)/ft_lstiter_bonus.c\
+				$(SRCS_DIR)/ft_lstmap_bonus.c \
+				$(SRCS_DIR)/ft_printf.c \
+				$(SRCS_DIR)/get_next_line.c \
+				$(SRCS_DIR)/get_next_line_utils.c \
+				$(SRCS_DIR)/issorted_int.c\
+				$(SRCS_DIR)/bubblesort_int.c
+
+OBJS_DIR	=	objs
+OBJS		=	$(patsubst $(SRCS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS))
+LIB_DIR		=	lib
+NAME		=	$(LIB_DIR)/libft.a
+CC			=	gcc
+CFLAGS		=	-g3 -Wall -Wextra -Werror -Iinclude
+LDFLAGS		= 	-fuse-ld=lld
+
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all:		${NAME}
 ${NAME}:	${SRCS} ${OBJS}
@@ -61,4 +76,3 @@ clean:
 fclean:		clean 
 	rm -f ${NAME}
 re:			fclean all
-	
