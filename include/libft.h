@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/10/01 21:04:11 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/10/28 13:00:44 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 // Added Functions
 //  ft_printf
 int			ft_printf(char const *format, ...);
+int			ft_printf_fd(int fd, char const *format, ...);
 //  get_next_line
 char		*get_next_line(int fd);
 t_bufflist	*newbuff(t_bufflist *list, int fd);
