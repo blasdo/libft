@@ -61,9 +61,8 @@ OBJS_DIR	=	objs
 OBJS		=	$(patsubst $(SRCS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS))
 LIB_DIR		=	lib
 NAME		=	$(LIB_DIR)/libft.a
-CC			=	gcc
+CC			=	clang
 CFLAGS		=	-g3 -Wall -Wextra -Werror -Iinclude
-LDFLAGS		= 	-fuse-ld=lld
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
