@@ -6,7 +6,7 @@
 /*   By: bvelasco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 00:44:27 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/10/28 13:35:10 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:08:48 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_printf(char const *format, ...)
 	return (counter);
 }
 
-int	fd_printf_fd(int fd, const char *format, ...)
+int	ft_fdprintf(int fd, const char *format, ...)
 {
 	int		i;
 	int		counter;
