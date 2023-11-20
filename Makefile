@@ -16,6 +16,7 @@ SRCS		=	$(SRCS_DIR)/ft_atoi.c\
 				$(SRCS_DIR)/ft_strncmp.c\
 				$(SRCS_DIR)/ft_toupper.c\
 				$(SRCS_DIR)/ft_memmove.c\
+				$(SRCS_DIR)/ft_memdup.c\
 				$(SRCS_DIR)/ft_strlcpy.c\
 				$(SRCS_DIR)/ft_strchr.c\
 				$(SRCS_DIR)/ft_strrchr.c\
