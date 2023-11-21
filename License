@@ -1,0 +1,16 @@
+-ES-
+LICENCIA DE LIBFT DE BVELASCO
+ATENCIÓN, ESTO NO SOFTWARE LIBRE, SU OBJETIVO ES MOSTRAR LOS TRABAJOS A QUIEN QUIERA VERLO PERO QUEDA PROHIBIDA LA REDISTRIBUCIÓN PARCIAL O TOTAL DEL CÓDIGO EXCEPTO EN LOS TÉRMINOS ESPECIFICADOS A CONTINUACIÓN
+
+1. Como dependencia de un proyecto que sí cuente con una licencia que permita la distribución, en este caso no se autoriza la modificación de la librería.
+2. Como parte de la redistribución de una modificación de proyecto que cuenta con esta librería como dependencia, en este caso los añadidos deben ser marcados en el archivo README y queda prohibido usar la modificación fuera de ese proyecto.
+3. Queda autorizada la distribución de binarios de esta librería para los propositos especificados arriba.
+
+-EN- (BY CHATGPT)
+
+LICENSE OF LIBFT BY BVELASCO
+WARNING, THIS IS NOT FREE SOFTWARE. ITS PURPOSE IS TO SHOW WORKS TO THOSE WHO WANT TO SEE THEM, BUT PARTIAL OR TOTAL REDISTRIBUTION OF THE CODE IS PROHIBITED EXCEPT AS SPECIFIED BELOW.
+
+1. As a dependency of a project that does have a license allowing distribution, modification of the library is not authorized in this case.
+2. As part of the redistribution of a modified project that has this library as a dependency, additions must be marked in the README file, and using the modification outside of that project is prohibited.
+3. Distribution of binaries of this library for the purposes specified above is authorized.
