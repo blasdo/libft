@@ -1,6 +1,6 @@
 -ES-
 LICENCIA DE LIBFT DE BVELASCO
-ATENCIÓN, ESTO NO SOFTWARE LIBRE, SU OBJETIVO ES MOSTRAR LOS TRABAJOS A QUIEN QUIERA VERLO PERO QUEDA PROHIBIDA LA REDISTRIBUCIÓN PARCIAL O TOTAL DEL CÓDIGO EXCEPTO EN LOS TÉRMINOS ESPECIFICADOS A CONTINUACIÓN
+ATENCIÓN, ESTO NO ES SOFTWARE LIBRE, SU OBJETIVO ES MOSTRAR LOS TRABAJOS A QUIEN QUIERA VERLO PERO QUEDA PROHIBIDA LA REDISTRIBUCIÓN PARCIAL O TOTAL DEL CÓDIGO EXCEPTO EN LOS TÉRMINOS ESPECIFICADOS A CONTINUACIÓN
 
 1. Como dependencia de un proyecto que sí cuente con una licencia que permita la distribución, en este caso no se autoriza la modificación de la librería.
 2. Como parte de la redistribución de una modificación de proyecto que cuenta con esta librería como dependencia, en este caso los añadidos deben ser marcados en el archivo README y queda prohibido usar la modificación fuera de ese proyecto.
