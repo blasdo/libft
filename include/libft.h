@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/11/20 22:39:55 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:56:32 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,6 @@ char		*findnl(t_bufflist *arr);
 int			issorted_int(int *numbers, size_t len);
 void		bubblesort_int(int *numbers, size_t len);
 // new memory functions
+void		ft_free_ptr_array(void	**);
 void		*ft_memdup(const void *mem, size_t len);
 #endif

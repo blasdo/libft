@@ -56,7 +56,9 @@ SRCS		=	$(SRCS_DIR)/ft_atoi.c\
 				$(SRCS_DIR)/get_next_line.c \
 				$(SRCS_DIR)/get_next_line_utils.c \
 				$(SRCS_DIR)/issorted_int.c\
-				$(SRCS_DIR)/bubblesort_int.c
+				$(SRCS_DIR)/bubblesort_int.c\
+				$(SRCS_DIR)/ft_free_ptr_array.c
+			
 
 OBJS_DIR	=	objs
 OBJS		=	$(patsubst $(SRCS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS))

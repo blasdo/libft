@@ -6,22 +6,15 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 13:44:33 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/09/24 01:37:20 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:56:02 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static char	**clean_split(char **to_clean)
+static char	**clear_split(char **to_clean)
 {
-	int	i;
-
-	i = 0;
-	while (to_clean[i])
-	{
-		free (to_clean[i++]);
-	}
-	free (to_clean);
+	ft_free_ptr_array((void **) to_clean);
 	return (0);
 }
 
@@ -79,7 +72,7 @@ char	**ft_split(char const *s, char c)
 		low = word_len(s, c);
 		rtn[i] = ft_substr(s, 0, low);
 		if (rtn[i++] == 0)
-			return (clean_split(rtn));
+			return (clear_split(rtn));
 		while (*(s + low) == c)
 			low++;
 		s += low;
