@@ -119,6 +119,6 @@ char		*findnl(t_bufflist *arr);
 int			issorted_int(int *numbers, size_t len);
 void		bubblesort_int(int *numbers, size_t len);
 // new memory functions
-void		ft_free_ptr_array(void	**);
+void		ft_free_ptr_array(void	**to_free);
 void		*ft_memdup(const void *mem, size_t len);
 #endif

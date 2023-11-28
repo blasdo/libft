@@ -34,7 +34,7 @@ void	bubblesort_int(int *numbers, size_t len)
 				numbers[i] = *prev;
 				*prev = aux;
 			}
-			prev = numbers + i++;;
+			prev = numbers + i++;
 		}
 		max--;
 	}
