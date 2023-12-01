@@ -1,16 +1,33 @@
--ES-
-LICENCIA DE LIBFT DE BVELASCO
-ATENCIÓN, ESTO NO ES SOFTWARE LIBRE, SU OBJETIVO ES MOSTRAR LOS TRABAJOS A QUIEN QUIERA VERLO PERO QUEDA PROHIBIDA LA REDISTRIBUCIÓN PARCIAL O TOTAL DEL CÓDIGO EXCEPTO EN LOS TÉRMINOS ESPECIFICADOS A CONTINUACIÓN
+BSD 3-Clause License (With attibution clause as 4th clause)
 
-1. Como dependencia de un proyecto que sí cuente con una licencia que permita la distribución, en este caso no se autoriza la modificación de la librería.
-2. Como parte de la redistribución de una modificación de proyecto que cuenta con esta librería como dependencia, en este caso los añadidos deben ser marcados en el archivo README y queda prohibido usar la modificación fuera de ese proyecto.
-3. Queda autorizada la distribución de binarios de esta librería para los propositos especificados arriba.
+Copyright (c) 2023, Borja Velasco
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
 
--EN- (BY CHATGPT)
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
 
-LICENSE OF LIBFT BY BVELASCO
-WARNING, THIS IS NOT FREE SOFTWARE. ITS PURPOSE IS TO SHOW WORKS TO THOSE WHO WANT TO SEE THEM, BUT PARTIAL OR TOTAL REDISTRIBUTION OF THE CODE IS PROHIBITED EXCEPT AS SPECIFIED BELOW.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
 
-1. As a dependency of a project that does have a license allowing distribution, modification of the library is not authorized in this case.
-2. As part of the redistribution of a modified project that has this library as a dependency, additions must be marked in the README file, and using the modification outside of that project is prohibited.
-3. Distribution of binaries of this library for the purposes specified above is authorized.
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+4. Attribution Clause:
+   This software was created by Borja Velasco
+   When redistributing this software or any derivative work, 
+   please include a notice acknowledging the original authorship of 
+   Borja Velasco as main developer if he was code more of 51% of the code)
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
