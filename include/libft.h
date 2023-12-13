@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/11/26 15:56:32 by bvelasco         ###   ########.fr       */
+/*   Updated: 2023/12/13 12:39:36 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,16 @@ void		bubblesort_int(int *numbers, size_t len);
 // new memory functions
 void		ft_free_ptr_array(void	**to_free);
 void		*ft_memdup(const void *mem, size_t len);
+// base functions improved
+# ifdef IMPROVED_BASE_FUNCTIONS
+
+typedef struct s_split
+{
+	size_t	words;
+	char	**splitted;
+}				t_split;
+
+t_split		*ft_split_meta(char *str, char delimiter);
+
+# endif
 #endif
