@@ -58,14 +58,13 @@ SRCS		=	$(SRCS_DIR)/ft_atoi.c\
 				$(SRCS_DIR)/issorted_int.c\
 				$(SRCS_DIR)/bubblesort_int.c\
 				$(SRCS_DIR)/ft_free_ptr_array.c\
-SRCS_IB		=	$(SRCS_DIR)/improved_base/ft_split_meta.c
 
 OBJS_DIR	=	objs
 OBJS		=	$(patsubst $(SRCS_DIR)/%.c,$(OBJS_DIR)/%.o,$(SRCS))
 LIB_DIR		=	lib
 NAME		=	$(LIB_DIR)/libft.a
 CC			=	clang
-CFLAGS		=	-g3 -Wall -Wextra -Werror -Iinclude
+CFLAGS		=	-Wall -Wextra -Werror -Iinclude
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
