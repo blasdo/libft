@@ -11,6 +11,7 @@ SRCS		=	$(SRCS_DIR)/ft_atoi.c\
 				$(SRCS_DIR)/ft_tolower.c\
 				$(SRCS_DIR)/ft_isalpha.c\
 				$(SRCS_DIR)/ft_isdigit.c\
+				$(SRCS_DIR)/ft_isnumber.c\
 				$(SRCS_DIR)/ft_memcmp.c\
 				$(SRCS_DIR)/ft_memset.c\
 				$(SRCS_DIR)/ft_strncmp.c\
