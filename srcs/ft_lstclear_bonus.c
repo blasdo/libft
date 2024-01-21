@@ -12,9 +12,23 @@
 
 #include <libft.h>
 
+void	ft_lstclear_type(t_list **lst, void (*del)(t_content))
+{
+	t_list	*next_node;
+
+	if (!lst || !del || !(*lst))
+		return ;
+	while ((*lst))
+	{
+		next_node = (*lst)-> next;
+		ft_lstdelone_type(*lst, del);
+		*lst = next_node;
+	}
+}
+
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	void	*next_node;
+	t_list	*next_node;
 
 	if (!lst || !del || !(*lst))
 		return ;
