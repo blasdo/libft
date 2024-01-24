@@ -56,7 +56,7 @@ static t_list	*clear_content(void *content, void (*del)(void *))
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*ret;
+	t_list			*ret;
 	t_content		tmp_content;
 	int				i;
 
