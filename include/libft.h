@@ -108,11 +108,11 @@ void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
-void		ft_lstclear_type(t_list **lst, void (*del)(t_content));
-void		ft_lstiter_type(t_list *lst, void (*f)(t_content));
+void		ft_lstclear_type(t_list **lst, void (*del)(t_content, t_type));
+void		ft_lstiter_type(t_list *lst, void (*f)(t_content, t_type));
 t_list		*ft_lstmap_type(t_list *lst, t_type type, 
-			t_content (*f)(t_content), void (*del)(t_content));
-void		ft_lstdelone_type(t_list *lst, void (*del)(t_content));
+			t_content (*f)(t_content, t_type), void (*del)(t_content, t_type));
+void		ft_lstdelone_type(t_list *lst, void (*del)(t_content, t_type));
 //Deprecated List Functions
 t_list		*ft_lstnew(void *content);
 void		ft_lstclear(t_list **lst, void (*del)(void*));
