@@ -6,7 +6,7 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/23 15:36:11 by borja            ###   ########.fr       */
+/*   Updated: 2024/01/25 18:39:24 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isnumber(char *str, int sign);
+int			ft_isinteger(char *str);
 int			ft_isprint(int c);
 int			ft_isspace(int c);
 // Casting Functions

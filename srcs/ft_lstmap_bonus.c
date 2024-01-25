@@ -6,13 +6,13 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:17:35 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/23 15:41:40 by borja            ###   ########.fr       */
+/*   Updated: 2024/01/25 17:40:48 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static	t_list	*cleear_content_type(t_content content, void (*del)(t_content))
+static	t_list	*clear_content_type(t_content content, void (*del)(t_content))
 {
 	(*del)(content);
 	return (0);
@@ -40,8 +40,8 @@ t_list	*ft_lstmap_type(t_list *lst, t_type type,
 		i++;
 		if (ft_lstsize(ret) != i)
 		{
-			ft_lstclear(&ret, del);
-			return (cleear_content_type(tmp_content, del));
+			ft_lstclear_type(&ret, del);
+			return (clear_content_type(tmp_content, del));
 		}
 		lst = lst -> next;
 	}
