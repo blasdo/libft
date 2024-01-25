@@ -6,7 +6,7 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/25 18:39:24 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/01/25 19:29:41 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,9 +111,11 @@ int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
 void		ft_lstclear_type(t_list **lst, void (*del)(t_content, t_type));
 void		ft_lstiter_type(t_list *lst, void (*f)(t_content, t_type));
-t_list		*ft_lstmap_type(t_list *lst, t_type type, 
-			t_content (*f)(t_content, t_type), void (*del)(t_content, t_type));
+t_list		*ft_lstmap_type(t_list *lst, t_type type,
+				t_content (*f)(t_content, t_type),
+				void (*del)(t_content, t_type));
 void		ft_lstdelone_type(t_list *lst, void (*del)(t_content, t_type));
+t_list		*ft_lstfind(t_content content, t_type type, t_list *list);
 //Deprecated List Functions
 t_list		*ft_lstnew(void *content);
 void		ft_lstclear(t_list **lst, void (*del)(void*));

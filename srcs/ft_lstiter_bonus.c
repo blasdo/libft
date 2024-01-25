@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:12:06 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/09/24 01:37:20 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/01/25 19:27:23 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_lstiter_type(t_list *lst, void (*f)(t_content, t_type))
 		lst = lst -> next;
 	}
 }
+
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)

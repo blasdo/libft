@@ -54,6 +54,7 @@ SRCS		=	$(SRCS_DIR)/ft_atoi.c\
 				$(SRCS_DIR)/ft_lstclear_bonus.c\
 				$(SRCS_DIR)/ft_lstiter_bonus.c\
 				$(SRCS_DIR)/ft_lstmap_bonus.c \
+				$(SRCS_DIR)/ft_lstfind.c \
 				$(SRCS_DIR)/ft_printf.c \
 				$(SRCS_DIR)/get_next_line.c \
 				$(SRCS_DIR)/get_next_line_utils.c \
