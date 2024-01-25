@@ -12,11 +12,11 @@
 
 #include <libft.h>
 
-void	ft_lstdelone_type(t_list *lst, void (*del)(t_content))
+void	ft_lstdelone_type(t_list *lst, void (*del)(t_content, t_type))
 {
 	if (!lst || !del)
 		return ;
-	(*del)(lst -> content);
+	(*del)(lst -> content, lst -> type);
 	free(lst);
 }
 

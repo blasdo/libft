@@ -6,20 +6,20 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:17:35 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/25 17:40:48 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:46:41 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static	t_list	*clear_content_type(t_content content, void (*del)(t_content))
+static	t_list	*clear_content_type(t_content content, t_type type, void (*del)(t_content, t_type))
 {
-	(*del)(content);
+	(*del)(content, type);
 	return (0);
 }
 
 t_list	*ft_lstmap_type(t_list *lst, t_type type,
-		t_content (*f)(t_content), void (*del)(t_content))
+		t_content (*f)(t_content, t_type), void (*del)(t_content, t_type))
 {
 	t_list		*ret;
 	t_content	tmp_content;
@@ -27,21 +27,21 @@ t_list	*ft_lstmap_type(t_list *lst, t_type type,
 
 	if (!lst || !f || !del)
 		return (0);
-	tmp_content = (f)(lst -> content);
+	tmp_content = (f)(lst -> content, lst -> type);
 	ret = ft_lstnew_type(INT, tmp_content);
 	if (!ret)
-		return (clear_content_type(tmp_content, del));
+		return (clear_content_type(tmp_content, type, del));
 	i = 0;
 	lst = lst -> next;
 	while (lst)
 	{
-		tmp_content = (*f)(lst -> content);
+		tmp_content = (*f)(lst -> content, type);
 		ft_lstadd_back(&ret, (ft_lstnew_type(type, tmp_content)));
 		i++;
 		if (ft_lstsize(ret) != i)
 		{
 			ft_lstclear_type(&ret, del);
-			return (clear_content_type(tmp_content, del));
+			return (clear_content_type(tmp_content, type, del));
 		}
 		lst = lst -> next;
 	}

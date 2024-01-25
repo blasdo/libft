@@ -12,7 +12,7 @@
 
 #include <libft.h>
 
-void	ft_lstclear_type(t_list **lst, void (*del)(t_content))
+void	ft_lstclear_type(t_list **lst, void (*del)(t_content, t_type))
 {
 	t_list	*next_node;
 
