@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:02:20 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/09/24 01:37:20 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:31:43 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ t_list	*ft_lstnew_type(t_type type, t_content content)
 		return (0);
 	new->type = type;
 	new->content = content;
+	new -> next = NULL;
 	return (new);
 }
