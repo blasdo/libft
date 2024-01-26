@@ -6,7 +6,7 @@
 /*   By: bvelasco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 19:26:55 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/25 19:26:56 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:05:23 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,30 @@
 
 static int	check_overflow(char *str)
 {
-	const char		*max = ft_itoa(INT_MAX);
-	const char		*min = ft_itoa(INT_MIN);
+	const char		*limits[2] = {ft_itoa(INT_MAX), ft_itoa(INT_MIN)};
+	int				is_ok;
 
-	if (ft_strlen(max) == 0 || ft_strlen(min) == 0)
-		return (0);
+	is_ok = 1;
+	if (ft_strlen(limits[0]) == 0 || ft_strlen(limits[1]) == 0)
+		is_ok = 0;
 	if (str[0] == '-')
 	{
-		if (ft_strlen(str) > ft_strlen(min))
-			return (0);
-		if (ft_strlen(str) == ft_strlen(min))
+		if (ft_strlen(str) > ft_strlen(limits[1]))
+			is_ok = 0;
+		if (ft_strlen(str) == ft_strlen(limits[1]))
 		{
-			if (ft_strncmp(min, str, ft_strlen(str)) < 0)
-				return (0);
+			if (ft_strncmp(limits[1], str, ft_strlen(str)) < 0)
+				is_ok = 0;
 		}
 	}
-	else if (ft_strlen(str) > ft_strlen(max))
-		return (0);
-	else if (ft_strlen(str) == ft_strlen(max))
-	{
-		if (ft_strncmp(max, str, ft_strlen(max)) < 0)
-			return (0);
-	}
-	free((void *) max);
-	free((void *) min);
-	return (1);
+	else if (ft_strlen(str) > ft_strlen(limits[0]))
+		is_ok = 0;
+	else if (ft_strlen(str) == ft_strlen(limits[0]))
+		if (ft_strncmp(limits[0], str, ft_strlen(limits[0])) < 0)
+			is_ok = 0;
+	free((void *)limits[0]);
+	free((void *)limits[1]);
+	return (is_ok);
 }
 
 int	ft_isinteger(char *str)
