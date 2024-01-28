@@ -6,7 +6,7 @@
 /*   By: bvelasco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:56:01 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/09/26 13:03:11 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:02:51 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,4 @@ char	*bufflist_to_str(t_bufflist *bufflist)
 	}
 	str[counters[0]] = '\0';
 	return (str);
-}
-
-void	*ft_bzero(void *b, size_t len)
-{
-	size_t	i;
-	char	*bchar;
-
-	i = 0;
-	bchar = (char *) b;
-	while (i < len)
-		bchar[i++] = 0;
-	return (b);
 }
