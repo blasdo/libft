@@ -6,7 +6,7 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/25 19:29:41 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:01:19 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_bufflist
 	char				buff[BUFFER_SIZE];
 	struct s_bufflist	*next;
 }				t_bufflist;
+
 // Pseudooolean type Functions (is_x)
 int			ft_isascii(int c);
 int			ft_isalnum(int c);
@@ -109,6 +110,7 @@ void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
+t_list		*ft_lstdup(t_list *lst, void (*del)(t_content, t_type));
 void		ft_lstclear_type(t_list **lst, void (*del)(t_content, t_type));
 void		ft_lstiter_type(t_list *lst, void (*f)(t_content, t_type));
 t_list		*ft_lstmap_type(t_list *lst, t_type type,

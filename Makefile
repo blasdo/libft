@@ -49,6 +49,7 @@ SRCS		=	$(SRCS_DIR)/ft_atoi.c\
 				$(SRCS_DIR)/ft_lstadd_front_bonus.c\
 				$(SRCS_DIR)/ft_lstsize_bonus.c\
 				$(SRCS_DIR)/ft_lstlast_bonus.c\
+				$(SRCS_DIR)/ft_lstdup.c\
 				$(SRCS_DIR)/ft_lstadd_back_bonus.c\
 				$(SRCS_DIR)/ft_lstdelone_bonus.c\
 				$(SRCS_DIR)/ft_lstclear_bonus.c\
