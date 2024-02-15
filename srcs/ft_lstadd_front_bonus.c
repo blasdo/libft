@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:08:22 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/09/24 01:37:20 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:23:56 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
+	(*lst)->prev = new;
 	new -> next = *lst;
 	*lst = new;
 }

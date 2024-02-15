@@ -6,7 +6,7 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/02/06 12:01:19 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:20:02 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_list
 	t_type				type;
 	t_content			content;
 	struct s_list		*next;
+	struct s_list		*prev;
 }				t_list;
 
 typedef struct s_bufflist
@@ -118,6 +119,7 @@ t_list		*ft_lstmap_type(t_list *lst, t_type type,
 				void (*del)(t_content, t_type));
 void		ft_lstdelone_type(t_list *lst, void (*del)(t_content, t_type));
 t_list		*ft_lstfind(t_content content, t_type type, t_list *list);
+t_list		*ft_lstrfind(t_content content, t_type type, t_list *list);
 //Deprecated List Functions
 t_list		*ft_lstnew(void *content);
 void		ft_lstclear(t_list **lst, void (*del)(void*));

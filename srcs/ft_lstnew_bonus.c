@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:02:20 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/26 16:34:33 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:21:27 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ t_list	*ft_lstnew_type(t_type type, t_content content)
 		return (0);
 	new->type = type;
 	new->content = content;
-	new -> next = NULL;
+	new->next = NULL;
+	new->prev = NULL;
 	return (new);
 }
 // deprecated
@@ -33,7 +34,8 @@ t_list	*ft_lstnew(void *content)
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (0);
-	new -> content.ptr = content;
-	new -> next = 0;
+	new->content.ptr = content;
+	new->next = NULL;
+	new->prev = NULL;
 	return (new);
 }

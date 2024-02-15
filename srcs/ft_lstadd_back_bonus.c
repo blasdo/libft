@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 22:10:35 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/28 14:58:03 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:31:52 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*last;
+
 	if (!lst || !new)
 		return ;
 	if (!(*lst))
@@ -21,5 +23,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	(ft_lstlast(*lst))-> next = new;
+	last = ft_lstlast(*lst);
+	last->prev = new;
+	last->next = new;
 }
