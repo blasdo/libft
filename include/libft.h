@@ -114,7 +114,11 @@ t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstdup(t_list *lst, void (*del)(t_content, t_type));
 void		ft_lstclear_type(t_list **lst, void (*del)(t_content, t_type));
 void		ft_lstiter_type(t_list *lst, void (*f)(t_content, t_type));
+void		ft_lstriter_type(t_list *lst, void (*f)(t_content, t_type));
 t_list		*ft_lstmap_type(t_list *lst, t_type type,
+				t_content (*f)(t_content, t_type),
+				void (*del)(t_content, t_type));
+t_list		*ft_lstrmap_type(t_list *lst, t_type type,
 				t_content (*f)(t_content, t_type),
 				void (*del)(t_content, t_type));
 void		ft_lstdelone_type(t_list *lst, void (*del)(t_content, t_type));

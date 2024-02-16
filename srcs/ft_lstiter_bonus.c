@@ -12,6 +12,15 @@
 
 #include <libft.h>
 
+void	ft_lstriter_type(t_list *lst, void (*f)(t_content, t_type))
+{
+	while (lst)
+	{
+		(*f)(lst -> content, lst -> type);
+		lst = lst -> prev;
+	}
+}
+
 void	ft_lstiter_type(t_list *lst, void (*f)(t_content, t_type))
 {
 	while (lst)

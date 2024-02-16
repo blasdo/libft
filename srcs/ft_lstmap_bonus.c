@@ -19,6 +19,36 @@ static	t_list	*clear_content_type(t_content content,
 	return (0);
 }
 
+t_list	*ft_lstrmap_type(t_list *lst, t_type type,
+		t_content (*f)(t_content, t_type), void (*del)(t_content, t_type))
+{
+	t_list		*ret;
+	t_content	tmp_content;
+	int			i;
+
+	if (!lst || !f || !del)
+		return (0);
+	tmp_content = (f)(lst -> content, lst -> type);
+	ret = ft_lstnew_type(INT, tmp_content);
+	if (!ret)
+		return (clear_content_type(tmp_content, type, del));
+	i = 0;
+	lst = lst -> prev;
+	while (lst)
+	{
+		tmp_content = (*f)(lst -> content, type);
+		ft_lstadd_front(&ret, (ft_lstnew_type(type, tmp_content)));
+		i++;
+		if (ft_lstsize(ret) != i)
+		{
+			ft_lstclear_type(&ret, del);
+			return (clear_content_type(tmp_content, type, del));
+		}
+		lst = lst -> prev;
+	}
+	return (ret);
+}
+
 t_list	*ft_lstmap_type(t_list *lst, t_type type,
 		t_content (*f)(t_content, t_type), void (*del)(t_content, t_type))
 {
