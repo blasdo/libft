@@ -46,7 +46,8 @@ typedef enum e_type
 	CHAR,
 	FLOAT,
 	DOUBLE,
-	PTR
+	PTR,
+	STR
 }			t_type;
 
 typedef struct s_list

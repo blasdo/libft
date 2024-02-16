@@ -15,6 +15,7 @@
 static	t_list	*clear_content_type(t_content content,
 		t_type type, void (*del)(t_content, t_type))
 {
+	if (del)
 	(*del)(content, type);
 	return (0);
 }
@@ -26,13 +27,13 @@ t_list	*ft_lstrmap_type(t_list *lst, t_type type,
 	t_content	tmp_content;
 	int			i;
 
-	if (!lst || !f || !del)
+	if (!lst || !f)
 		return (0);
 	tmp_content = (f)(lst -> content, lst -> type);
-	ret = ft_lstnew_type(INT, tmp_content);
+	ret = ft_lstnew_type(type, tmp_content);
 	if (!ret)
 		return (clear_content_type(tmp_content, type, del));
-	i = 0;
+	i = 1;
 	lst = lst -> prev;
 	while (lst)
 	{
@@ -56,13 +57,13 @@ t_list	*ft_lstmap_type(t_list *lst, t_type type,
 	t_content	tmp_content;
 	int			i;
 
-	if (!lst || !f || !del)
+	if (!lst || !f )
 		return (0);
 	tmp_content = (f)(lst -> content, lst -> type);
-	ret = ft_lstnew_type(INT, tmp_content);
+	ret = ft_lstnew_type(type, tmp_content);
 	if (!ret)
 		return (clear_content_type(tmp_content, type, del));
-	i = 0;
+	i = 1;
 	lst = lst -> next;
 	while (lst)
 	{
