@@ -6,7 +6,7 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:17:35 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/01/25 19:27:57 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:53:39 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static	t_list	*clear_content_type(t_content content,
 		t_type type, void (*del)(t_content, t_type))
 {
 	if (del)
-	(*del)(content, type);
+		(*del)(content, type);
 	return (0);
 }
 
@@ -57,7 +57,7 @@ t_list	*ft_lstmap_type(t_list *lst, t_type type,
 	t_content	tmp_content;
 	int			i;
 
-	if (!lst || !f )
+	if (!lst || !f)
 		return (0);
 	tmp_content = (f)(lst -> content, lst -> type);
 	ret = ft_lstnew_type(type, tmp_content);
