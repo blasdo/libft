@@ -21,7 +21,7 @@ int	*strarr_to_intarr(char **sarr)
 	if (!sarr || !(*sarr))
 		return (NULL);
 	size = strarr_len(sarr);
-	result = malloc(size + 1);
+	result = malloc((size + 1) * sizeof(int));
 	if (!result)
 		return (NULL);
 	i = 0;
