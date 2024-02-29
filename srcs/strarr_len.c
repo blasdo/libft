@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_ptr_array.c                                :+:      :+:    :+:   */
+/*   strarr_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: bvelasco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/26 15:47:56 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/02/23 10:18:52 by bvelasco         ###   ########.fr       */
+/*   Created: 2024/02/26 16:06:51 by bvelasco          #+#    #+#             */
+/*   Updated: 2024/02/26 16:17:01 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_free_ptr_array(void *to_free)
+size_t	strarr_len(char **strarr)
 {
-	int		i;
-	void	**to_free_d;
+	int	i;
 
-	to_free_d = (void **)to_free;
 	i = 0;
-	if (!to_free)
-		return ;
-	while (to_free_d[i])
-	{
-		free (to_free_d[i++]);
-	}
-	free (to_free);
+	while (strarr[i])
+		i++;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/02/15 17:20:02 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:17:31 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ void		*ft_memmove(void *dst, const void *src, size_t len);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strjoin(char const *s1, char const *s2);
-char		**ft_split(char const *s, char c);
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strdup(const char *s1);
 // Fuctions Pointers Functions
@@ -156,10 +155,14 @@ char		*bufflist_to_str(t_bufflist *first);
 void		*freebuff(t_bufflist **bufflist);
 void		clearbuff(t_bufflist **bufflist);
 char		*findnl(t_bufflist *arr);
+// strarr functions
+char		**ft_split(char const *s, char c);
+size_t		strarr_len(char **strarr);
+int			*strarr_to_intarr(char **sarr);
 //  sort functions
 int			issorted_int(int *numbers, size_t len);
 void		bubblesort_int(int *numbers, size_t len);
 // new memory functions
-void		ft_free_ptr_array(void	**to_free);
+void		ft_free_ptr_array(void	*to_free);
 void		*ft_memdup(const void *mem, size_t len);
 #endif
