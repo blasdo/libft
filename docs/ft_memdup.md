@@ -4,11 +4,11 @@
 ```c
 void *ft_memdup(const void *mem, size_t len)
 ```
-#### Description
+#### Descripción
 Crea una nueva reserva de memoria realizada con malloc(system) que contiene una copia de **len** bytes desde la direción **mem**.
-#### Return
+#### Retorno
 Devuelve la reserva de memoria creada.
-#### Know issues
+#### Errores conocidos
 Ninguno
-#### Implementation details
+#### Detalles de implementación
 Ninguno relevante.

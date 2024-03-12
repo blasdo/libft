@@ -3,8 +3,8 @@
 
 Libft experimenta una actualización "importante" en cada rango "núcleo común", con hitos de versión de la siguiente manera:
 
-    Versión 1.0 (confirmación aaa787031297aed42a92bf6a407c4ffb92ae8495)
-    Versión 2.0 (confirmación f61cf6b21b0c7d8aaba51f404d6ecd98f1e080e6)
+    Versión 1.0 (commit aaa787031297aed42a92bf6a407c4ffb92ae8495)
+    Versión 2.0 (commit f61cf6b21b0c7d8aaba51f404d6ecd98f1e080e6)
     Versión 3.0 (actualmente en desarrollo)
     Versión 4.0 (Próxima)
     Versión 5.0 (Final)
