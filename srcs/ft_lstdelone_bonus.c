@@ -14,9 +14,10 @@
 
 void	ft_lstdelone_type(t_list *lst, void (*del)(t_content, t_type))
 {
-	if (!lst || !del)
+	if (!lst)
 		return ;
-	(*del)(lst -> content, lst -> type);
+	if (del)
+		(*del)(lst -> content, lst -> type);
 	free(lst);
 }
 

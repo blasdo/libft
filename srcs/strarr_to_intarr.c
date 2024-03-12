@@ -14,7 +14,7 @@
 
 int	*strarr_to_intarr(char **sarr)
 {
-	int 	*result;
+	int		*result;
 	size_t	size;
 	size_t	i;
 
