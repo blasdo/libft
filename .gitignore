@@ -25,4 +25,5 @@ tags
 [._]*.un~
 # Compiled
 *.o
+*.out
 *.a

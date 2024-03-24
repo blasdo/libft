@@ -6,7 +6,7 @@
 /*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:34:32 by borja             #+#    #+#             */
-/*   Updated: 2024/02/26 18:58:21 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:23:33 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int	ft_isnumber(char *str, int sign)
 	if (!str)
 		return (0);
 	i = 0;
+
+	while (ft_isspace(str[i]))
+		i++;
 	if (sign == 1)
 	{
 		if (str[i] == '-')
