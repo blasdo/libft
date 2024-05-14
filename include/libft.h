@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: borja <borja@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 14:54:00 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/02/26 16:17:31 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/05/14 12:13:00 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,28 @@
 
 typedef union u_content
 {
-	int		i;
-	char	c;
-	float	f;
-	double	d;
-	void	*ptr;
+	int			i;
+	long		l;
+	long long	ll;
+	char		c;
+	float		f;
+	double		d;
+	void		*ptr;
+	char		*str;
+	void		*oth;
 }			t_content;
 
 typedef enum e_type
 {
 	INT,
+	LONG,
+	LONG_LONG,
 	CHAR,
 	FLOAT,
 	DOUBLE,
 	PTR,
-	STR
+	STR,
+	OTHER
 }			t_type;
 
 typedef struct s_list
@@ -66,14 +73,45 @@ typedef struct s_bufflist
 }				t_bufflist;
 
 // Pseudooolean type Functions (is_x)
+/*
+* Returns 1 if 'c' is in ascii table
+* Returns 0 if not
+*/
 int			ft_isascii(int c);
-int			ft_isalnum(int c);
+/*
+* Returns 1 if 'c' is the ascii value of an alphabetic character in ascii table
+* Returns 0 if not
+*/
 int			ft_isalpha(int c);
+/*
+* Returns 1 if 'c' is the ascii value of a digit character in ascii table
+* Returns 0 if not
+*/
 int			ft_isdigit(int c);
-int			ft_isnumber(char *str, int sign);
-int			ft_isinteger(char *str);
+/*
+* Returns 1 if 'c' if an alpha or a digit value in ascii table
+* Returns 0 if not
+*/
+int			ft_isalnum(int c);
+/*
+* Returns 1 if 'c' if a printable value in ascii table
+* Returns 0 if not
+*/
 int			ft_isprint(int c);
+/*
+* Returns 1 if 'c' if a space in ascii table (acording to isspace(3))
+* Returns 0 if not
+*/
 int			ft_isspace(int c);
+/*
+* Returns 1 if the 'str' string is a sucession of digits with a sign (- or +) at start
+* Returns 0 if not
+*/
+int			ft_isnumber(char *str);
+/*
+* Returns 1 if the 'str' string is a number and is in integer limits
+*/
+int			ft_isinteger(char *str);
 // Casting Functions
 int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
