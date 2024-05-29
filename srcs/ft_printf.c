@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 00:44:27 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/11/01 15:08:48 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/05/29 19:32:38 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_put_fd_bridge(char type, va_list *va, int fd, int nocp)
 {
-	if (type == '%')
+	if (type == '%' ||  type == '\0')
 		ft_putchar_fd('%', fd);
 	else if (type == 'c')
 		ft_putchar_fd(va_arg(*va, int), fd);
@@ -35,7 +35,8 @@ static int	ft_put_fd_bridge(char type, va_list *va, int fd, int nocp)
 		ft_putchar_fd(type, fd);
 		nocp = 1;
 	}
-	if (type == 'c' || type == '%')
+	printf("asdf%i\n", type);
+	if (type == 'c' || type == '%' || type == 0)
 		nocp = 1;
 	return (nocp);
 }
@@ -54,7 +55,8 @@ int	ft_printf(char const *format, ...)
 		if (format[i] == '%')
 		{
 			counter += ft_put_fd_bridge(format[++i], &vaargs, 1, 0);
-			i++;
+			if (format[i] != 0)
+				i++;
 		}
 		else
 		{
