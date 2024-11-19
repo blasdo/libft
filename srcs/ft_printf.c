@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 00:44:27 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/08/17 18:34:16 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/11/19 10:09:52 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_put_fd_bridge(char type, va_list *va, int fd, int nocp)
 {
-	if (type == '%' ||  type == '\0')
+	if (type == '%' || type == '\0')
 		ft_putchar_fd('%', fd);
 	else if (type == 'c')
 		ft_putchar_fd(va_arg(*va, int), fd);
