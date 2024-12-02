@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:01:22 by bvelasco          #+#    #+#             */
-/*   Updated: 2023/09/26 12:57:27 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:34:31 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ size_t	char_count_buff(t_bufflist	*first)
 	current_buff = first->buff;
 	while (j < max && current_buff[j] != '\n')
 		j++;
-	if (current_buff[j] == '\n')
+	if (j < max && current_buff[j] == '\n')
 		j++;
 	counter += j;
 	return (counter);
